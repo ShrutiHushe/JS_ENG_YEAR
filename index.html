@@ -1,0 +1,45 @@
+<html>
+<head>
+    <title>Engineering Year App by Shruti</title>
+    <style>
+        * { font-size: 40px; font-family: Century; }
+        body { background-color: lightyellow; }
+        .btn { width: 20%; }
+    </style>
+</head>
+<body>
+<center>
+    <h1>Engineering Year App</h1>
+    <form onsubmit="show()">
+        <input type="text" placeholder="Enter your name" id="name" />
+        <br/><br/>
+        <label for="year">Select your year of engineering:</label>
+        <select id="year">
+            <option value="First Year">First Year</option>
+            <option value="Second Year">Second Year</option>
+            <option value="Third Year">Third Year</option>
+            <option value="Fourth Year">Fourth Year</option>
+        </select>
+        <br/><br/>
+        <input type="submit" class="btn" />
+    </form>    
+    <h2 id="msg"></h2>
+
+    <script>
+        function show() {
+            event.preventDefault();
+            let name = document.getElementById("name").value;
+            let year = document.getElementById("year").value;
+            let msg = document.getElementById("msg");
+
+            if (name.trim() == "") {
+                msg.innerHTML = "Please enter your name.";
+            } else {
+                let ans = "Name " + name + " Year: " + year;
+                msg.innerHTML = ans;
+            }
+        }
+    </script>
+</center>
+</body>
+</html>
